@@ -7,7 +7,7 @@ bower install react-ui-select
 ```
 ###Online demo
 
-[View demo](http://wjsjtu.github.io/react-ui-select/master/demo)
+[View demo](http://wjsjtu.github.io/react-ui-select/master)
 
 ###The MIT License (MIT)
 
