@@ -207,11 +207,11 @@
 				React.createElement(
 					"div",
 					{ className: classPrefix + "menu" },
-					matches.length && self.state.inputValue.length ? matches : React.createElement(
+					matches.length ? matches : self.state.inputValue.length ? React.createElement(
 						"div",
 						{ className: classPrefix + "noresults" },
 						self.props.nonMatchPrompt
-					)
+					) : null
 				)
 			);
 		},
