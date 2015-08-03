@@ -140,7 +140,11 @@ window.Select = React.createClass({
 		});
 		return <div className={classPrefix + "menu-outer"}>
 					<div className={classPrefix + "menu"}>
-					{matches.length ? matches : <div className={classPrefix + "noresults"}>{self.props.nonMatchPrompt}</div>}
+					{
+						(matches.length && self.state.inputValue.length) ? 
+						matches :
+						<div className={classPrefix + "noresults"}>{self.props.nonMatchPrompt}</div>
+					}
 					</div>
 				</div>
 	},

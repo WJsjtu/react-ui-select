@@ -207,7 +207,7 @@
 				React.createElement(
 					"div",
 					{ className: classPrefix + "menu" },
-					matches.length ? matches : React.createElement(
+					matches.length && self.state.inputValue.length ? matches : React.createElement(
 						"div",
 						{ className: classPrefix + "noresults" },
 						self.props.nonMatchPrompt
