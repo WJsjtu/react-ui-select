@@ -3,7 +3,7 @@ A flexible select component using Facebook React.
 
 ###Install
 ```
-bower install react-ui-select
+npm install react-ui-select
 ```
 ###Online demo
 
