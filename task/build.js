@@ -41,5 +41,27 @@ var config = {
 };
 
 webpack(config, function(err, stats) {
-    console.log(err, stats);
+	if(err){
+		console.log(err);
+	} else {
+		console.log('JS build success!');
+	}
+});
+
+var fs = require('fs');
+var less = require('less');
+
+less.render('@import "default.less";', {
+	paths: [path.join(__dirname, '../src/less')],  // Specify search paths for @import directives
+	filename: 'style.less', // Specify a filename, for better error messages
+	compress: true          // Minify CSS output
+}, function (e, output) {
+	if(e){
+		console.log(e.message);
+	} else {
+		fs.writeFile(path.join(__dirname, '../build/style.css'), output.css, {flag: 'w+'}, function (err) {
+			if (err) throw err;
+			console.log('CSS build success!');
+		});
+	}
 });
