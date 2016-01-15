@@ -5,7 +5,7 @@
 			Select Component for React
 		</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" href="./bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="vendor/bootstrap.css" />
 	</head>
 	<body>
 	    <style>
@@ -104,45 +104,7 @@
 			
 	    </div>
 
-		<script src="./react.js"></script>
-		<script type="text/javascript" src="../build/react-select.bundle.js"></script>
-		<script type="text/javascript" src="./jquery-1.9.1.min.js"></script>
-		<script type="text/javascript">
-			$(function(){
-				var opt = {
-					options: [
-						{
-							label: "item1",
-							value: "value"
-						},
-						{
-							label: "item2",
-							value: "value2"
-						},
-						{
-							label: "item3",
-							value: "value3"
-						},
-						{
-							label: "item4",
-							value: "value4"
-						},
-						{
-							label: "item5",
-							value: "value5"
-						},
-						{
-							label: "item6",
-							value: "value6"
-						}
-					], 
-					disabled: false, 
-					onChange: function(selected, created){ console.log(selected, created); }, 
-					searchable: true,
-					multi: true
-				};
-				React.render(React.createElement(Select,opt), document.getElementById('select'));
-			});
-        </script>
+		<script type="text/javascript" src="/build/common.js"></script>
+		<script type="text/javascript" src="/build/bundle.js"></script>
 	</body>
 </html>

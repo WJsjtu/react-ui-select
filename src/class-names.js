@@ -1,16 +1,16 @@
-module.exports = function () {
-	var classes = '';
-	for (var i = 0; i < arguments.length; i++) {
-		var arg = arguments[i];
+var classNames = function() {
+	let classes = '';
+	for (let i = 0; i < arguments.length; i++) {
+		let arg = arguments[i];
 		if (!arg) continue;
-		var argType = typeof arg;
+		let argType = typeof arg;
 		if ('string' === argType || 'number' === argType) {
 			classes += ' ' + arg;
 		} else if (Array.isArray(arg)) {
 			classes += ' ' + classNames.apply(null, arg);
 
 		} else if ('object' === argType) {
-			for (var key in arg) {
+			for (let key in arg) {
 				if (arg.hasOwnProperty(key) && arg[key]) {
 					classes += ' ' + key;
 				}
@@ -19,3 +19,4 @@ module.exports = function () {
 	}
 	return classes.substr(1);
 };
+export default classNames;
