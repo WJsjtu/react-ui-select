@@ -59,6 +59,16 @@ less.render('@import "default.less";', {
 	if(e){
 		console.log(e.message);
 	} else {
+		var buildPath = path.join(__dirname, '../build');
+		if(!fs.existsSync(buildPath)){
+			fs.mkdirSync(buildPath);
+		} else {
+			var info = fs.statSync(buildPath);
+			if(!info.isDirectory()){
+				fs.unlinkSync(buildPath);
+				fs.mkdirSync(buildPath);
+			}
+		}
 		fs.writeFile(path.join(__dirname, '../build/style.css'), output.css, {flag: 'w+'}, function (err) {
 			if (err) throw err;
 			console.log('CSS build success!');
