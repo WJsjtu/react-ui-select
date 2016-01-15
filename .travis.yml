@@ -1,14 +1,13 @@
 ---
 language: node_js
 node_js:
-- '0.12'
+- '5.3.0'
 sudo: false
 cache:
   directories:
   - node_modules
 install:
-  - npm install -g gulp
   - npm install -g webpack
   - npm install
 script:
-  - gulp
+  - npm run build

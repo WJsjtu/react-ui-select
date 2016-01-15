@@ -1,12 +1,12 @@
 # react-ui-select [![Build Status](https://travis-ci.org/WJsjtu/react-ui-select.svg?branch=master)](https://travis-ci.org/WJsjtu/react-ui-select)
 A flexible select component using Facebook React.
 
-###Run in browser
+###Run in browser (127.0.0.1:3000)
 ```
 npm start
 ```
 
-###Build standalone module(React is not included in the built file)
+###Build standalone module (React is not included in the built file)
 ```
 npm run build
 ```
