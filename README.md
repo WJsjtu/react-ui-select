@@ -1,10 +1,16 @@
 # react-ui-select [![Build Status](https://travis-ci.org/WJsjtu/react-ui-select.svg?branch=master)](https://travis-ci.org/WJsjtu/react-ui-select)
 A flexible select component using Facebook React.
 
-###Install
+###Run in browser
 ```
-npm install react-ui-select
+npm start
 ```
+
+###Build standalone module(React is not included in the built file)
+```
+npm run build
+```
+
 ###Online demo
 
 [View demo](http://wjsjtu.github.io/react-ui-select/master/demo)
