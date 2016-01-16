@@ -1,5 +1,5 @@
 if(process.env.NODE_ENV !== "production"){
-	require('!style!css!less!./less/default.less');
+	require('./less/default.less');
 }
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
@@ -19,12 +19,10 @@ export default class Select extends Component {
     	this.state = {
 			isFocused: props.isFocused,
 			isLoading: props.isOpen,
-			inputValue: '',
-			options: props.options
+			inputValue: ''
 		};
 		this.created = [];
 		this.selected = [];
-		this.options = [];
 		this.mounted = false;
 	}
 	set mounted(mounted) {
