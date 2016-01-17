@@ -42,9 +42,9 @@ var config = {
 
 webpack(config, function(err, stats) {
 	if(err){
-		console.log(err);
+		console.error(err);
 	} else {
-		console.log('JS build success!');
+		console.info('==> JS build success!');
 	}
 });
 
@@ -57,7 +57,7 @@ less.render('@import "default.less";', {
 	compress: true          // Minify CSS output
 }, function (e, output) {
 	if(e){
-		console.log(e.message);
+		console.error(e.message);
 	} else {
 		var buildPath = path.join(__dirname, '../build');
 		if(!fs.existsSync(buildPath)){
@@ -71,7 +71,7 @@ less.render('@import "default.less";', {
 		}
 		fs.writeFile(path.join(__dirname, '../build/style.css'), output.css, {flag: 'w+'}, function (err) {
 			if (err) throw err;
-			console.log('CSS build success!');
+			console.info('==> CSS build success!');
 		});
 	}
 });

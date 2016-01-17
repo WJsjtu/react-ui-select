@@ -55,10 +55,13 @@ var config = {
 new WebpackDevServer(webpack(config), {
 	publicPath: config.output.publicPath,
 	hot: true,
+	noInfo: false,
+	stats: { colors: true },
+	open: true,
 	historyApiFallback: true
-}).listen(port, 'localhost', function (err, result) {
-	if (err) {
-		console.log(err);
+}).listen(port, 'localhost', function (error, result) {
+	if (error) {
+		console.error(error);
 	}
-	console.log('Listening at localhost:' + port);
+	console.info('==> 🌎  Listening on port %s. Open up http://localhost:%s/ in your browser.', port, port)
 });
