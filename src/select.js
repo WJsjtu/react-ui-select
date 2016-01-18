@@ -316,7 +316,7 @@ export default class Select extends Component {
 	}
 
 	render() {
-		var control, hasValue = this.selected.length + this.created.length;
+		var items, hasValue = this.selected.length + this.created.length;
 
 		let selectClass = classNames('select', this.props.className, {
 			'is-multi': this.props.multi && hasValue,
@@ -334,15 +334,7 @@ export default class Select extends Component {
 		let clearButton = hasValue ? (<span className={classPrefix + 'clear'} onClick={this.clearValue.bind(this)}>×</span>) : null;
 
 		if(this.props.multi){
-			control = (
-				<div className={classPrefix + 'control'} onClick={this.inputFocus.bind(this)} onKeyDown={this.handleKeyDown.bind(this)}>
-					{hasValue ? this.renderItems() : null}
-					{input}
-					{holder}
-					{toggleButton}
-					{clearButton}
-				</div>
-			);
+			items = hasValue ? this.renderItems() : null;
 		} else {
 			let value = this.selected.length ? 
 					this.props.item(this.props.options[this.selected[0]]) 
@@ -351,20 +343,18 @@ export default class Select extends Component {
 							this.props.item(this.props.options[this.created[0]]) 
 							: null
 					);
-			control = (
+			items = hasValue ? this.renderHolder(this.state.inputValue.length ? '&nbsp;' : value) : null;
+		}
+
+		return (
+			<div className={selectClass} ref='wrapper'>
 				<div className={classPrefix + 'control'} onClick={this.inputFocus.bind(this)} onKeyDown={this.handleKeyDown.bind(this)}>
-					{hasValue ? this.renderHolder(this.state.inputValue.length ? '&nbsp;' : value) : null}
+					{items}
 					{input}
 					{holder}
 					{toggleButton}
 					{clearButton}
 				</div>
-			);
-		}
-
-		return (
-			<div className={selectClass} ref='wrapper'>
-				{control}
 				{this.state.isOpen ? this.renderMenu(this.state.inputValue) : null}
 			</div>
 		);
