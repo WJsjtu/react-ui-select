@@ -43,6 +43,11 @@ var config = {
 webpack(config, function(err, stats) {
 	if(err){
 		console.error(err);
+	} else if(stats.compilation.errors.length){
+		var msgs = [];
+		stats.compilation.errors.forEach(function(e, index){
+			console.error(e.message);
+		});
 	} else {
 		console.info('==> JS build success!');
 	}

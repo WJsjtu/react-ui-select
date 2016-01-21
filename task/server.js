@@ -59,7 +59,7 @@ new WebpackDevServer(webpack(config), {
 	stats: { colors: true },
 	open: true,
 	historyApiFallback: true
-}).listen(port, 'localhost', function (error, result) {
+}).listen(port, 'localhost', function (error) {
 	if (error) {
 		console.error(error);
 	}
