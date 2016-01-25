@@ -58,10 +58,6 @@ export default class Select extends Component {
     }
 
 	componentWillReceiveProps(newProps) {
-		if (JSON.stringify(newProps.options) !== JSON.stringify(this.props.options)) {
-			this.selected = this.dealSelected(this.props.selected, true);
-			this.created = this.props.created;
-		}
 		this.forceUpdate();
 	}
 
