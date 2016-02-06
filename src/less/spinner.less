@@ -3,20 +3,25 @@
 // ------------------------------
 
 .select-spinner(@size, @orbit, @satellite) {
-	.animation( select-animation-spin 400ms infinite linear );
-	.square(@size);
-	box-sizing: border-box;
-	border-radius: 50%;
-	border: floor(@size / 8) solid @orbit;
-	border-right-color: @satellite;
-	display: inline-block;
-	position: relative;
-	
+  .animation(select-animation-spin 400ms infinite linear);
+  .square(@size);
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: floor(@size / 8) solid @orbit;
+  border-right-color: @satellite;
+  display: inline-block;
+  position: relative;
+
 }
 
 @keyframes select-animation-spin {
-	to { transform: rotate(1turn); }
+  to {
+    transform: rotate(1turn);
+  }
 }
+
 @-webkit-keyframes select-animation-spin {
-	to { -webkit-transform: rotate(1turn); }
+  to {
+    -webkit-transform: rotate(1turn);
+  }
 }

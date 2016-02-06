@@ -1,110 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>
-			Select Component for React
-		</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" href="vendor/bootstrap.css" />
-	</head>
-	<body>
-	    <style>
-     	body {
-        	padding-top: 50px;
-        	.sidenav {
-				width: 228px;
-				margin: 30px 0 0;
-				padding: 0;
-				background-color: #fff;
-				-webkit-border-radius: 6px;
-			    	-moz-border-radius: 6px;
-			        	border-radius: 6px;
-				-webkit-box-shadow: 0 1px 4px rgba(0,0,0,.065);
-			   		-moz-box-shadow: 0 1px 4px rgba(0,0,0,.065);
-			        	box-shadow: 0 1px 4px rgba(0,0,0,.065);
-			}
-			.sidenav > li > a {
-				display: block;
-				width: 190px \9;
-				margin: 0 0 -1px;
-				padding: 8px 14px;
-				border: 1px solid #e5e5e5;
-			}
-			.sidenav > li:first-child > a {
-				-webkit-border-radius: 6px 6px 0 0;
-			   	-moz-border-radius: 6px 6px 0 0;
-			        	border-radius: 6px 6px 0 0;
-			}
-			.sidenav > li:last-child > a {
-				-webkit-border-radius: 0 0 6px 6px;
-			   	-moz-border-radius: 0 0 6px 6px;
-			        	border-radius: 0 0 6px 6px;
-			}
-			.sidenav > .active > a {
-				position: relative;
-				z-index: 2;
-				padding: 9px 15px;
-				border: 0;
-				text-shadow: 0 1px 0 rgba(0,0,0,.15);
-				-webkit-box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
-			   	-moz-box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
-			        	box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
-			}
-			/* Chevrons */
-			.sidenav .icon-chevron-right {
-				float: right;
-				margin-top: 2px;
-				margin-right: -6px;
-				opacity: .25;
-			}
-			.sidenav > li > a:hover {
-				background-color: #f5f5f5;
-			}
-			.sidenav a:hover .icon-chevron-right {
-				opacity: .5;
-			}
-			.sidenav .active .icon-chevron-right,
-			.sidenav .active a:hover .icon-chevron-right {
-				background-image: url(../img/glyphicons-halflings-white.png);
-				opacity: 1;
-			}
-			.sidenav.affix, .sidenav.affix-bottom {
-				position: fixed;
-				top: 20px;
-			}
-    	}
-    	</style>
-	    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-	    <!--[if lt IE 9]>
-	    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	    <![endif]-->
-	</head>
-	<body>
+<head>
+    <title>
+        Select Component for React
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap.css"/>
+    <style>
+        body {
+            padding-top: 50px;
+        }
 
-		<div class="navbar navbar-inverse navbar-fixed-top">
-	    	<div class="navbar-inner">
-	      	<div class="container">
-	        	<a class="brand navbar-brand" href="https://github.com/wjsjtu/react-ui-select">react-ui-select</a>
-	        	<ul class="nav navbar-nav">
-	          		<li class="active"><a href="#">Demo</a></li>
-	          		<li><a href="https://github.com/wjsjtu/react-ui-select" taget="_blank">GitHub</a></li>
-	        	</ul>
-	      	</div>
-	    	</div>
-	    </div>
-	    <div class="container">
-		    <h2>react-ui-select<small> Online Demo</small></h2>
+        .sidenav > li > a {
+            display: block;
+            width: 190px \9;
+            margin: 0 0 -1px;
+            padding: 8px 14px;
+            border: 1px solid #e5e5e5;
+        }
 
-			<p>Welcome!</p>
-			<div class="row">
-				<div class="span12 col-md-12">
-					<div id="select" style="width: 400px;"></div>
-				</div>
-			</div>
-			
-	    </div>
+        .sidenav > li:first-child > a {
+            -webkit-border-radius: 6px 6px 0 0;
+            -moz-border-radius: 6px 6px 0 0;
+            border-radius: 6px 6px 0 0;
+        }
 
-		<script type="text/javascript" src="/build/common.js"></script>
-		<script type="text/javascript" src="/build/bundle.js"></script>
-	</body>
+        .sidenav > li:last-child > a {
+            -webkit-border-radius: 0 0 6px 6px;
+            -moz-border-radius: 0 0 6px 6px;
+            border-radius: 0 0 6px 6px;
+        }
+
+        .sidenav > .active > a {
+            position: relative;
+            z-index: 2;
+            padding: 9px 15px;
+            border: 0;
+            text-shadow: 0 1px 0 rgba(0, 0, 0, .15);
+            -webkit-box-shadow: inset 1px 0 0 rgba(0, 0, 0, .1), inset -1px 0 0 rgba(0, 0, 0, .1);
+            -moz-box-shadow: inset 1px 0 0 rgba(0, 0, 0, .1), inset -1px 0 0 rgba(0, 0, 0, .1);
+            box-shadow: inset 1px 0 0 rgba(0, 0, 0, .1), inset -1px 0 0 rgba(0, 0, 0, .1);
+        }
+
+        .sidenav {
+            float: right;
+            margin-top: 2px;
+            margin-right: -6px;
+            opacity: .25;
+        }
+
+        .sidenav > li > a:hover {
+            background-color: #f5f5f5;
+        }
+
+        .sidenav a:hover {
+            opacity: .5;
+        }
+
+        .sidenav .active
+        .sidenav .active a:hover {
+            background-image: url(../img/glyphicons-halflings-white.png);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand navbar-brand" href="https://github.com/wjsjtu/react-ui-select">react-ui-select</a>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Demo</a></li>
+                <li><a href="https://github.com/wjsjtu/react-ui-select" taget="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h2>react-ui-select
+        <small> Online Demo</small>
+    </h2>
+
+    <p>Welcome!</p>
+    <div class="row">
+        <div class="span12 col-md-12">
+            <div id="select" style="width: 400px;"></div>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="/build/common.js"></script>
+<script type="text/javascript" src="/build/bundle.js"></script>
+</body>
 </html>
